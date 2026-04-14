@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music & Audio | PurePath Guide</title>
+   <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', 'Noto Sans Arabic', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .warning-box { border-left: 4px solid #f59e0b; background-color: #fffbeb; }
+        .soul-box { border-left: 4px solid #8b5cf6; background-color: #f5f3ff; }
+        /* This flips the decorative border to the right side for Arabic */
+[dir="rtl"] .mindful-box { 
+    border-left: none;
+    border-right: 4px solid #f59e0b; /* Use your specific orange color code */
+    text-align: right;
+}
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 min-h-screen">
+
+    <nav class="p-5 glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-emerald-800 font-bold">
+                ← <span id="back-btn">Back to Home</span>
+            </a>
+            <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold text-emerald-700">العربية</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-5xl shadow-sm mx-auto mb-4">🎵</div>
+            <h1 id="page-title" class="text-4xl font-black text-slate-900 mb-2">Music & Audio</h1>
+            <p id="page-subtitle" class="text-slate-500 italic">Protecting your ears and heart in a loud world.</p>
+        </div>
+
+        <section class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 mb-8">
+            <h2 id="filter-title" class="text-xl font-bold mb-6 text-slate-800">Mindful Listening</h2>
+            
+            <div class="space-y-4">
+                <div class="warning-box p-5 rounded-2xl">
+                    <h3 id="lyrics-title" class="font-bold text-amber-900">Toxic Lyrics</h3>
+                    <p id="lyrics-desc" class="text-sm text-amber-800 mt-1">Avoid content that promotes profanity, violence, or themes that contradict spiritual values.</p>
+                </div>
+
+                <div class="warning-box p-5 rounded-2xl">
+                    <h3 id="distraction-title" class="font-bold text-amber-900">Sensory Overload</h3>
+                    <p id="distraction-desc" class="text-sm text-amber-800 mt-1">Be wary of high-frequency "brain-rot" audio that creates addiction or decreases focus during prayer.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="soul-box p-8 rounded-[2rem] bg-white shadow-sm border border-slate-100">
+            <h2 id="alt-title" class="text-xl font-bold mb-6 text-purple-800">Soulful Alternatives</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">📖</div>
+                    <div>
+                        <h4 id="quran-title" class="font-bold text-slate-800">Quranic Recitation</h4>
+                        <p id="quran-desc" class="text-xs text-slate-500 italic">The ultimate healing for the heart.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🍃</div>
+                    <div>
+                        <h4 id="nature-title" class="font-bold text-slate-800">Nature Soundscapes</h4>
+                        <p id="nature-desc" class="text-xs text-slate-500 italic">Rain, forest, and ocean sounds for focus.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🗣️</div>
+                    <div>
+                        <h4 id="nasheed-title" class="font-bold text-slate-800">Vocal Nasheeds</h4>
+                        <p id="nasheed-desc" class="text-xs text-slate-500 italic">Uplifting poetry and spiritual reminders.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🎙️</div>
+                    <div>
+                        <h4 id="pod-title" class="font-bold text-slate-800">Beneficial Podcasts</h4>
+                        <p id="pod-desc" class="text-xs text-slate-500 italic">Learning history, science, and faith.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+  <script>
+    const content = {
+        en: {
+            back: "Back to Home",
+            title: "Music & Audio",
+            subtitle: "Protecting your ears and heart in a loud world.",
+            filterTitle: "Mindful Listening",
+            lyricsTitle: "Toxic Lyrics",
+            lyricsDesc: "Avoid content that promotes profanity, violence, or themes that contradict spiritual values.",
+            distractionTitle: "Sensory Overload",
+            distractionDesc: "Be wary of high-frequency 'brain-rot' audio that creates addiction or decreases focus during prayer.",
+            altTitle: "Soulful Alternatives",
+            quranTitle: "Quranic Recitation",
+            quranDesc: "The ultimate healing for the heart.",
+            natureTitle: "Nature Soundscapes",
+            natureDesc: "Rain, forest, and ocean sounds for focus.",
+            nasheedTitle: "Vocal Nasheeds",
+            nasheedDesc: "Uplifting poetry and spiritual reminders.",
+            podTitle: "Beneficial Podcasts",
+            podDesc: "Learning history, science, and faith."
+        },
+        ar: {
+            back: "العودة للرئيسية",
+           title: "الموسيقى والصوتيات",
+          subtitle: "حماية سمعك وقلبك في عالم مليء بالضجيج.",
+            filterTitle: "الاستماع الواعي",
+            lyricsTitle: "الكلمات السامة",
+            lyricsDesc: "تجنب المحتوى الذي يروج للفحش أو العنف أو المواضيع التي تتعارض مع القيم الروحية.",
+            distractionTitle: "الإرهاق الحسي",
+            distractionDesc: "احذر من المقاطع الصوتية المشتتة التي تسبب الإدمان أو تقلل من التركيز أثناء الصلاة.",
+            altTitle: "بدائل روحانية",
+            quranTitle: "تلاوة القرآن الكريم",
+            quranDesc: "الشفاء الأمثل للقلوب.",
+            natureTitle: "أصوات الطبيعة",
+            natureDesc: "أصوات المطر والغابات والمحيطات للتركيز.",
+            nasheedTitle: "الأناشيد الصوتية",
+            nasheedDesc: "شعر هادف وتذكيرات روحانية.",
+            podTitle: "بودكاست نافع",
+            podDesc: "تعلم التاريخ والعلوم والإيمان."
+        }
+    };
+
+    // 1. Initialize currentLang from storage or default to English
+    let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+    // 2. The unified apply function
+    function applyLanguage(lang) {
+        const html = document.getElementById('main-html');
+        const btn = document.getElementById('lang-btn');
+        
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        btn.innerText = (lang === 'ar') ? 'English' : 'العربية';
+
+        // Update Header
+        document.getElementById('back-btn').innerText = content[lang].back;
+        document.getElementById('page-title').innerText = content[lang].title;
+        document.getElementById('page-subtitle').innerText = content[lang].subtitle;
+
+        // Update Listening Section
+        document.getElementById('filter-title').innerText = content[lang].filterTitle;
+        document.getElementById('lyrics-title').innerText = content[lang].lyricsTitle;
+        document.getElementById('lyrics-desc').innerText = content[lang].lyricsDesc;
+        document.getElementById('distraction-title').innerText = content[lang].distractionTitle;
+        document.getElementById('distraction-desc').innerText = content[lang].distractionDesc;
+
+        // Update Alternatives Section
+        document.getElementById('alt-title').innerText = content[lang].altTitle;
+        document.getElementById('quran-title').innerText = content[lang].quranTitle;
+        document.getElementById('quran-desc').innerText = content[lang].quranDesc;
+        document.getElementById('nature-title').innerText = content[lang].natureTitle;
+        document.getElementById('nature-desc').innerText = content[lang].natureDesc;
+        document.getElementById('nasheed-title').innerText = content[lang].nasheedTitle;
+        document.getElementById('nasheed-desc').innerText = content[lang].nasheedDesc;
+        document.getElementById('pod-title').innerText = content[lang].podTitle;
+        document.getElementById('pod-desc').innerText = content[lang].podDesc;
+    }
+
+    // 3. Toggle function to sync with storage
+    function toggleLanguage() {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        localStorage.setItem('preferredLang', currentLang); 
+        applyLanguage(currentLang);
+    }
+
+    // 4. Apply the saved language immediately on load
+    window.onload = function() {
+        applyLanguage(currentLang);
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethical Wealth | PurePath Guide</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', 'Noto Sans Arabic', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .finance-alert { border-left: 4px solid #f97316; background-color: #fff7ed; }
+        .growth-box { border-left: 4px solid #059669; background-color: #ecfdf5; }
+        [dir="rtl"] .finance-alert, [dir="rtl"] .growth-box {
+    border-left: none;
+    border-right: 4px solid;
+}
+[dir="rtl"] .finance-alert { border-right-color: #f97316; }
+[dir="rtl"] .growth-box { border-right-color: #059669; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 min-h-screen">
+
+    <nav class="p-5 glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-emerald-800 font-bold">
+                ← <span id="back-btn">Back to Home</span>
+            </a>
+            <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold text-emerald-700">العربية</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-5xl shadow-sm mx-auto mb-4">💰</div>
+            <h1 id="page-title" class="text-4xl font-black text-slate-900 mb-2">Ethical Wealth</h1>
+            <p id="page-subtitle" class="text-slate-500 italic">Navigating finance with a clear conscience and fair trade.</p>
+        </div>
+
+        <section class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 mb-8">
+            <h2 id="riba-title" class="text-xl font-bold mb-6 text-slate-800">Understanding Riba</h2>
+            
+            <div class="space-y-4">
+                <div class="finance-alert p-5 rounded-2xl">
+                    <h3 id="interest-title" class="font-bold text-orange-900">Interest-Based Loans</h3>
+                    <p id="interest-desc" class="text-sm text-orange-800 mt-1">Avoiding traditional bank loans, credit card interest, and mortgages that involve usury.</p>
+                </div>
+
+                <div class="finance-alert p-5 rounded-2xl">
+                    <h3 id="contract-title" class="font-bold text-orange-900">Unfair Contracts</h3>
+                    <p id="contract-desc" class="text-sm text-orange-800 mt-1">Transparency is key. Avoid deals with hidden fees or ambiguous terms (Gharar).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="growth-box p-8 rounded-[2rem] bg-white shadow-sm border border-slate-100">
+            <h2 id="growth-title" class="text-xl font-bold mb-6 text-emerald-800">Ethical Investing</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">📈</div>
+                    <div>
+                        <h4 id="halal-stocks-title" class="font-bold text-slate-800">Sharia-Compliant Stocks</h4>
+                        <p id="halal-stocks-desc" class="text-xs text-slate-500 italic">Investing in companies that avoid haram industries (alcohol, gambling, etc.).</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🤝</div>
+                    <div>
+                        <h4 id="profit-title" class="font-bold text-slate-800">Profit & Loss Sharing</h4>
+                        <p id="profit-desc" class="text-xs text-slate-500 italic">Using Musharakah or Mudarabah models instead of fixed interest.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🌙</div>
+                    <div>
+                        <h4 id="zakat-title" class="font-bold text-slate-800">Zakat & Sadaqah</h4>
+                        <p id="zakat-desc" class="text-xs text-slate-500 italic">Purifying your wealth by giving to those in need.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🏗️</div>
+                    <div>
+                        <h4 id="assets-title" class="font-bold text-slate-800">Tangible Assets</h4>
+                        <p id="assets-desc" class="text-xs text-slate-500 italic">Focusing on real estate or gold to protect value.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<script>
+    const content = {
+        en: {
+            back: "Back to Home",
+            title: "Ethical Wealth",
+            subtitle: "Navigating finance with a clear conscience and fair trade.",
+            ribaTitle: "Understanding Riba",
+            interestTitle: "Interest-Based Loans",
+            interestDesc: "Avoiding traditional bank loans, credit card interest, and mortgages that involve usury.",
+            contractTitle: "Unfair Contracts",
+            contractDesc: "Transparency is key. Avoid deals with hidden fees or ambiguous terms (Gharar).",
+            growthTitle: "Ethical Investing",
+            halalStocksTitle: "Sharia-Compliant Stocks",
+            halalStocksDesc: "Investing in companies that avoid haram industries (alcohol, gambling, etc.).",
+            profitTitle: "Profit & Loss Sharing",
+            profitDesc: "Using Musharakah or Mudarabah models instead of fixed interest.",
+            zakatTitle: "Zakat & Sadaqah",
+            zakatDesc: "Purifying your wealth by giving to those in need.",
+            assetsTitle: "Tangible Assets",
+            assetsDesc: "Focusing on real estate or gold to protect value."
+        },
+        ar: {
+            back: "العودة للرئيسية",
+            title: "الثروة الأخلاقية",
+            subtitle: "إدارة الأموال بضمير حي وتجارة عادلة.",
+            ribaTitle: "فهم الربا",
+            interestTitle: "القروض الربوية",
+            interestDesc: "تجنب القروض البنكية التقليدية، وفوائد البطاقات الائتمانية، والرهون العقارية التي تتضمن الربا.",
+            contractTitle: "العقود غير العادلة",
+            contractDesc: "الشفافية هي المفتاح. تجنب الصفقات ذات الرسوم المخفية أو الشروط الغامضة (الغرر).",
+            growthTitle: "الاستثمار الأخلاقي",
+            halalStocksTitle: "أسهم متوافقة مع الشريعة",
+            halalStocksDesc: "الاستثمار في الشركات التي تتجنب الصناعات المحرمة (الكحول، القمار، إلخ).",
+            profitTitle: "المشاركة في الربح والخسارة",
+            profitDesc: "استخدام نماذج المشاركة أو المضاربة بدلاً من الفائدة الثابتة.",
+            zakatTitle: "الزكاة والصدقة",
+            zakatDesc: "تطهير مالك من خلال إيتاء حق المحتاجين.",
+            assetsTitle: "الأصول الملموسة",
+            assetsDesc: "التركيز على العقارات أو الذهب لحماية قيمة المال."
+        }
+    };
+
+    // 1. Initialize currentLang from storage or default to English
+    let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+    // 2. The unified apply function
+    function applyLanguage(lang) {
+        const html = document.getElementById('main-html');
+        const btn = document.getElementById('lang-btn');
+        
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        btn.innerText = (lang === 'ar') ? 'English' : 'العربية';
+
+        // Update Header
+        document.getElementById('back-btn').innerText = content[lang].back;
+        document.getElementById('page-title').innerText = content[lang].title;
+        document.getElementById('page-subtitle').innerText = content[lang].subtitle;
+
+        // Update Riba Section
+        document.getElementById('riba-title').innerText = content[lang].ribaTitle;
+        document.getElementById('interest-title').innerText = content[lang].interestTitle;
+        document.getElementById('interest-desc').innerText = content[lang].interestDesc;
+        document.getElementById('contract-title').innerText = content[lang].contractTitle;
+        document.getElementById('contract-desc').innerText = content[lang].contractDesc;
+
+        // Update Growth Section
+        document.getElementById('growth-title').innerText = content[lang].growthTitle;
+        document.getElementById('halal-stocks-title').innerText = content[lang].halalStocksTitle;
+        document.getElementById('halal-stocks-desc').innerText = content[lang].halalStocksDesc;
+        document.getElementById('profit-title').innerText = content[lang].profitTitle;
+        document.getElementById('profit-desc').innerText = content[lang].profitDesc;
+        document.getElementById('zakat-title').innerText = content[lang].zakatTitle;
+        document.getElementById('zakat-desc').innerText = content[lang].zakatDesc;
+        document.getElementById('assets-title').innerText = content[lang].assetsTitle;
+        document.getElementById('assets-desc').innerText = content[lang].assetsDesc;
+    }
+
+    // 3. Toggle function to sync with storage
+    function toggleLanguage() {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        localStorage.setItem('preferredLang', currentLang); 
+        applyLanguage(currentLang);
+    }
+
+    // 4. Apply the saved language immediately on load
+    window.onload = function() {
+        applyLanguage(currentLang);
+    };
+</script>
+</body>
+</html>

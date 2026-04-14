@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sources & References | PurePath Guide</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', 'Noto Sans Arabic', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .source-card { border-left: 4px solid #10b981; transition: transform 0.2s; }
+        .source-card:hover { transform: translateX(5px); }
+        [dir="rtl"] .source-card:hover { transform: translateX(-5px); }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 min-h-screen">
+
+    <nav class="p-5 glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-emerald-800 font-bold">
+                ← <span id="back-btn">Back to Home</span>
+            </a>
+            <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold text-emerald-700">العربية</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-5xl shadow-sm mx-auto mb-4">📚</div>
+            <h1 id="page-title" class="text-4xl font-black text-slate-900 mb-2">Sources & References</h1>
+            <p id="page-subtitle" class="text-slate-500 italic">The scholarly foundations and ethical guidelines behind our content.</p>
+        </div>
+
+        <div class="grid gap-6">
+            <div class="source-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-lg text-emerald-900 mb-1">Classical Islamic Jurisprudence</h3>
+                <p id="src-1-desc" class="text-slate-600 text-sm">Foundational rulings on food (Halal/Haram), finance (Riba), and social ethics derived from the Quran and Sunnah.</p>
+            </div>
+
+            <div class="source-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-lg text-emerald-900 mb-1">Global Halal Certification Bodies</h3>
+                <p id="src-2-desc" class="text-slate-600 text-sm">Standards provided by international organizations for food processing, ingredients (E-numbers), and ethical slaughter.</p>
+            </div>
+
+            <div class="source-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-lg text-emerald-900 mb-1">Ethical Consumerism Research</h3>
+                <p id="src-3-desc" class="text-slate-600 text-sm">Data regarding Fair Trade, sustainable fashion ethics, and the impact of the fast-fashion industry on global workers.</p>
+            </div>
+
+            <div class="source-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-lg text-emerald-900 mb-1">Digital Wellbeing Studies</h3>
+                <p id="src-4-desc" class="text-slate-600 text-sm">Psychological research on the effects of doom-scrolling and digital consumption on mental clarity and presence.</p>
+            </div>
+        </div>
+    </main>
+
+ <script>
+    const content = {
+        en: {
+            back: "Back to Home",
+            title: "Sources & References",
+            subtitle: "The scholarly foundations and ethical guidelines behind our content.",
+            srcTitles: [
+                "Classical Islamic Jurisprudence",
+                "Global Halal Certification Bodies",
+                "Ethical Consumerism Research",
+                "Digital Wellbeing Studies"
+            ],
+            src1Desc: "Foundational rulings on food (Halal/Haram), finance (Riba), and social ethics derived from the Quran and Sunnah.",
+            src2Desc: "Standards provided by international organizations for food processing, ingredients (E-numbers), and ethical slaughter.",
+            src3Desc: "Data regarding Fair Trade, sustainable fashion ethics, and the impact of the fast-fashion industry on global workers.",
+            src4Desc: "Psychological research on the effects of doom-scrolling and digital consumption on mental clarity and presence."
+        },
+        ar: {
+            back: "العودة للرئيسية",
+            title: "المصادر والمراجع",
+            subtitle: "الأسس العلمية والمبادئ الأخلاقية التي يستند إليها محتوانا.",
+            srcTitles: [
+                "الفقه الإسلامي الأصيل",
+                "هيئات منح شهادات الحلال العالمية",
+                "أبحاث الاستهلاك الأخلاقي",
+                "دراسات الرفاهية الرقمية"
+            ],
+            src1Desc: "الأحكام التأسيسية المتعلقة بالأطعمة (حلال/حرام)، والتمويل (الربا)، والأخلاق الاجتماعية المستمدة من الكتاب والسنة.",
+            src2Desc: "المعايير المقدمة من المنظمات الدولية لتصنيع الأغذية، والمكونات (الأرقام الأوروبية E)، والذبح الشرعي.",
+            src3Desc: "بيانات تتعلق بالتجارة العادلة، وأخلاقيات الأزياء المستدامة، وتأثير صناعة الأزياء السريعة على العمال عالمياً.",
+            src4Desc: "الأبحاث النفسية حول آثار التصفح السلبي والاستهلاك الرقمي على الصفاء الذهني والحضور."
+        }
+    };
+
+    let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+    function applyLanguage(lang) {
+        const html = document.getElementById('main-html');
+        const btn = document.getElementById('lang-btn');
+        
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        btn.innerText = (lang === 'ar') ? 'English' : 'العربية';
+
+        // Update Header
+        document.getElementById('back-btn').innerText = content[lang].back;
+        document.getElementById('page-title').innerText = content[lang].title;
+        document.getElementById('page-subtitle').innerText = content[lang].subtitle;
+
+        // Update Card Titles (using querySelectorAll for the list)
+        const titles = document.querySelectorAll('.source-card h3');
+        content[lang].srcTitles.forEach((titleText, index) => {
+            if(titles[index]) titles[index].innerText = titleText;
+        });
+
+        // Update Card Descriptions
+        document.getElementById('src-1-desc').innerText = content[lang].src1Desc;
+        document.getElementById('src-2-desc').innerText = content[lang].src2Desc;
+        document.getElementById('src-3-desc').innerText = content[lang].src3Desc;
+        document.getElementById('src-4-desc').innerText = content[lang].src4Desc;
+    }
+
+    function toggleLanguage() {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        localStorage.setItem('preferredLang', currentLang); 
+        applyLanguage(currentLang);
+    }
+
+    window.onload = function() {
+        applyLanguage(currentLang);
+    };
+</script>
+</body>
+</html>

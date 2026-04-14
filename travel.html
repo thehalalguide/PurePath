@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tips | PurePath Guide</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', 'Noto Sans Arabic', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .travel-box { border-left: 4px solid #10b981; background-color: #f0fdf4; }
+        .prep-box { border-left: 4px solid #3b82f6; background-color: #eff6ff; }
+        [dir="rtl"] .travel-box, [dir="rtl"] .prep-box {
+    border-left: none;
+    border-right: 4px solid;
+}
+
+[dir="rtl"] .prep-box { border-right-color: #3b82f6; }
+[dir="rtl"] .travel-box { border-right-color: #10b981; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 min-h-screen">
+
+    <nav class="p-5 glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-emerald-800 font-bold">
+                ← <span id="back-btn">Back to Home</span>
+            </a>
+            <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold text-emerald-700">العربية</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-5xl shadow-sm mx-auto mb-4">🌍</div>
+            <h1 id="page-title" class="text-4xl font-black text-slate-900 mb-2">Travel Tips</h1>
+            <p id="page-subtitle" class="text-slate-500 italic">Finding Halal spots globally and traveling with purpose.</p>
+        </div>
+
+        <section class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 mb-8">
+            <h2 id="prep-title" class="text-xl font-bold mb-6 text-slate-800">Travel Preparation</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="prep-box p-5 rounded-2xl">
+                    <h3 id="prayer-title" class="font-bold text-blue-900">Prayer on the Go</h3>
+                    <p id="prayer-desc" class="text-sm text-blue-800 mt-1">Locate prayer rooms in airports and use apps to track Qibla and local prayer times accurately.</p>
+                </div>
+
+                <div class="prep-box p-5 rounded-2xl">
+                    <h3 id="food-app-title" class="font-bold text-blue-900">Halal Locators</h3>
+                    <p id="food-app-desc" class="text-sm text-blue-800 mt-1">Download verified apps to find Halal-certified restaurants and mosques in non-Muslim majority cities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="travel-box p-8 rounded-[2rem] bg-white shadow-sm border border-slate-100">
+            <h2 id="habit-title" class="text-xl font-bold mb-6 text-emerald-800">Mindful Exploration</h2>
+            
+            <div class="space-y-6">
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">✈️</div>
+                    <div>
+                        <h4 id="dua-title" class="font-bold text-slate-800">Travel Supplications</h4>
+                        <p id="dua-desc" class="text-sm text-slate-500">Reciting the Dua for travel to seek protection and blessings throughout your journey.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🤝</div>
+                    <div>
+                        <h4 id="etiquette-title" class="font-bold text-slate-800">Global Citizenship</h4>
+                        <p id="etiquette-desc" class="text-sm text-slate-500">Respecting local cultures while maintaining your own values as a representative of your faith.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <script>
+    const content = {
+        en: {
+            back: "Back to Home",
+            title: "Travel Tips",
+            subtitle: "Finding Halal spots globally and traveling with purpose.",
+            prepTitle: "Travel Preparation",
+            prayerTitle: "Prayer on the Go",
+            prayerDesc: "Locate prayer rooms in airports and use apps to track Qibla and local prayer times accurately.",
+            foodAppTitle: "Halal Locators",
+            foodAppDesc: "Download verified apps to find Halal-certified restaurants and mosques in non-Muslim majority cities.",
+            habitTitle: "Mindful Exploration",
+            duaTitle: "Travel Supplications",
+            duaDesc: "Reciting the Dua for travel to seek protection and blessings throughout your journey.",
+            etiquetteTitle: "Global Citizenship",
+            etiquetteDesc: "Respecting local cultures while maintaining your own values as a representative of your faith."
+        },
+        ar: {
+            back: "العودة للرئيسية",
+            title: "نصائح السفر",
+            subtitle: "البحث عن الأماكن الحلال عالميًا والسفر بغاية هادفة.",
+            prepTitle: "الاستعداد للسفر",
+            prayerTitle: "الصلاة أثناء السفر",
+            prayerDesc: "تحديد غرف الصلاة في المطارات واستخدام التطبيقات لتتبع القبلة ومواقيت الصلاة المحلية بدقة.",
+            foodAppTitle: "محددات الحلال",
+            foodAppDesc: "تحميل تطبيقات موثوقة للعثور على المطاعم الحاصلة على شهادة الحلال والمساجد في المدن ذات الأغلبية غير المسلمة.",
+            habitTitle: "الاستكشاف الواعي",
+            duaTitle: "أدعية السفر",
+            duaDesc: "قراءة دعاء السفر لطلب الحماية والبركة طوال رحلتك.",
+            etiquetteTitle: "المواطنة العالمية",
+            etiquetteDesc: "احترام الثقافات المحلية مع الحفاظ على قيمك الخاصة كممثل لدينك."
+        }
+    };
+
+    // 1. Initialize currentLang from storage or default to English
+    let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+    // 2. The unified apply function
+    function applyLanguage(lang) {
+        const html = document.getElementById('main-html');
+        const btn = document.getElementById('lang-btn');
+        
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        btn.innerText = (lang === 'ar') ? 'English' : 'العربية';
+
+        // Update Header Elements
+        document.getElementById('back-btn').innerText = content[lang].back;
+        document.getElementById('page-title').innerText = content[lang].title;
+        document.getElementById('page-subtitle').innerText = content[lang].subtitle;
+
+        // Update Preparation Section
+        document.getElementById('prep-title').innerText = content[lang].prepTitle;
+        document.getElementById('prayer-title').innerText = content[lang].prayerTitle;
+        document.getElementById('prayer-desc').innerText = content[lang].prayerDesc;
+        document.getElementById('food-app-title').innerText = content[lang].foodAppTitle;
+        document.getElementById('food-app-desc').innerText = content[lang].foodAppDesc;
+
+        // Update Exploration Section
+        document.getElementById('habit-title').innerText = content[lang].habitTitle;
+        document.getElementById('dua-title').innerText = content[lang].duaTitle;
+        document.getElementById('dua-desc').innerText = content[lang].duaDesc;
+        document.getElementById('etiquette-title').innerText = content[lang].etiquetteTitle;
+        document.getElementById('etiquette-desc').innerText = content[lang].etiquetteDesc;
+    }
+
+    // 3. Toggle function to sync with storage
+    function toggleLanguage() {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        localStorage.setItem('preferredLang', currentLang); 
+        applyLanguage(currentLang);
+    }
+
+    // 4. Apply the saved language immediately on load
+    window.onload = function() {
+        applyLanguage(currentLang);
+    };
+</script>
+</body>
+</html>

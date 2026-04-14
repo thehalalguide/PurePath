@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Habits | PurePath Guide</title>
+   <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', 'Noto Sans Arabic', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .digital-alert { border-left: 4px solid #8b5cf6; background-color: #f5f3ff; }
+        .habit-box { border-left: 4px solid #10b981; background-color: #ecfdf5; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 min-h-screen">
+
+    <nav class="p-5 glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-emerald-800 font-bold">
+                ← <span id="back-btn">Back to Home</span>
+            </a>
+            <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold text-emerald-700">العربية</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-5xl shadow-sm mx-auto mb-4">📱</div>
+            <h1 id="page-title" class="text-4xl font-black text-slate-900 mb-2">Digital Habits</h1>
+            <p id="page-subtitle" class="text-slate-500 italic">Cultivating presence and mindfulness in the digital age.</p>
+        </div>
+
+        <section class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 mb-8">
+            <h2 id="pitfalls-title" class="text-xl font-bold mb-6 text-slate-800">Mindful Digital Use</h2>
+            
+            <div class="space-y-4">
+                <div class="digital-alert p-5 rounded-2xl">
+                    <h3 id="backbiting-title" class="font-bold text-purple-900">Online Gossip & Backbiting</h3>
+                    <p id="backbiting-desc" class="text-sm text-purple-800 mt-1">Avoiding speaking ill of others (Gheebah) in private group chats or public comments.</p>
+                </div>
+
+                <div class="digital-alert p-5 rounded-2xl">
+                    <h3 id="doom-scrolling-title" class="font-bold text-purple-900">Doom-Scrolling</h3>
+                    <p id="doom-scrolling-desc" class="text-sm text-purple-800 mt-1">Be conscious of how much time you spend consuming negative or endless content.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="habit-box p-8 rounded-[2rem] bg-white shadow-sm border border-slate-100">
+            <h2 id="healthy-habits-title" class="text-xl font-bold mb-6 text-emerald-800">Cultivating Pure Habits</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">⏳</div>
+                    <div>
+                        <h4 id="time-management-title" class="font-bold text-slate-800">Intentional Screen Time</h4>
+                        <p id="time-management-desc" class="text-xs text-slate-500 italic">Setting boundaries on phone usage to prioritize family and prayer time.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🤫</div>
+                    <div>
+                        <h4 id="silence-title" class="font-bold text-slate-800">Seeking Silence</h4>
+                        <p id="silence-desc" class="text-xs text-slate-500 italic">Finding moments without digital noise for reflection (Tafakkur).</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🚫</div>
+                    <div>
+                        <h4 id="unfollow-title" class="font-bold text-slate-800">Curate Your Feed</h4>
+                        <p id="unfollow-desc" class="text-xs text-slate-500 italic">Unfollow accounts that promote materialism, envy, or haram behaviors.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">👀</div>
+                    <div>
+                        <h4 id="gaze-title" class="font-bold text-slate-800">Lowering the Gaze</h4>
+                        <p id="gaze-desc" class="text-xs text-slate-500 italic">Protecting your spiritual focus by avoiding improper content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <script>
+    const content = {
+        en: {
+            back: "Back to Home",
+            title: "Digital Habits",
+            subtitle: "Cultivating presence and mindfulness in the digital age.",
+            pitfallsTitle: "Mindful Digital Use",
+            backbitingTitle: "Online Gossip & Backbiting",
+            backbitingDesc: "Avoiding speaking ill of others (Gheebah) in private group chats or public comments.",
+            doomTitle: "Doom-Scrolling",
+            doomDesc: "Be conscious of how much time you spend consuming negative or endless content.",
+            healthyTitle: "Cultivating Pure Habits",
+            timeTitle: "Intentional Screen Time",
+            timeDesc: "Setting boundaries on phone usage to prioritize family and prayer time.",
+            silenceTitle: "Seeking Silence",
+            silenceDesc: "Finding moments without digital noise for reflection (Tafakkur).",
+            unfollowTitle: "Curate Your Feed",
+            unfollowDesc: "Unfollow accounts that promote materialism, envy, or haram behaviors.",
+            gazeTitle: "Lowering the Gaze",
+            gazeDesc: "Protecting your spiritual focus by avoiding improper content."
+        },
+        ar: {
+            back: "العودة للرئيسية",
+            title: "العادات الرقمية",
+            subtitle: "تعزيز الحضور والوعي في العصر الرقمي.",
+            pitfallsTitle: "الاستخدام الرقمي الواعي",
+            backbitingTitle: "الغيبة والنميمة عبر الإنترنت",
+            backbitingDesc: "تجنب التحدث بسوء عن الآخرين (الغيبة) في مجموعات الدردشة الخاصة أو التعليقات العامة.",
+            doomTitle: "التصفح السلبي (Doom-Scrolling)",
+            doomDesc: "كن واعيًا لمقدار الوقت الذي تقضيه في استهلاك المحتوى السلبي أو اللامتناهي.",
+            healthyTitle: "زراعة العادات النقية",
+            timeTitle: "وقت الشاشة الهادف",
+            timeDesc: "وضع حدود لاستخدام الهاتف لإعطاء الأولوية للوقت العائلي وأوقات الصلاة.",
+            silenceTitle: "البحث عن الصمت",
+            silenceDesc: "إيجاد لحظات خالية من الضجيج الرقمي للتفكر.",
+            unfollowTitle: "تنقية جدولك الزمني",
+            unfollowDesc: "إلغاء متابعة الحسابات التي تروج للمادية أو الحسد أو السلوكيات المحرمة.",
+            gazeTitle: "غض البصر",
+            gazeDesc: "حماية تركيزك الروحي من خلال تجنب المحتوى غير اللائق."
+        }
+    };
+
+    // 1. Initialize currentLang from storage or default to English
+    let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+    // 2. The unified apply function
+    function applyLanguage(lang) {
+        const html = document.getElementById('main-html');
+        const btn = document.getElementById('lang-btn');
+        
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        btn.innerText = (lang === 'ar') ? 'English' : 'العربية';
+
+        // Update Header
+        document.getElementById('back-btn').innerText = content[lang].back;
+        document.getElementById('page-title').innerText = content[lang].title;
+        document.getElementById('page-subtitle').innerText = content[lang].subtitle;
+
+        // Update Pitfalls Section
+        document.getElementById('pitfalls-title').innerText = content[lang].pitfallsTitle;
+        document.getElementById('backbiting-title').innerText = content[lang].backbitingTitle;
+        document.getElementById('backbiting-desc').innerText = content[lang].backbitingDesc;
+        document.getElementById('doom-scrolling-title').innerText = content[lang].doomTitle;
+        document.getElementById('doom-scrolling-desc').innerText = content[lang].doomDesc;
+
+        // Update Habits Section
+        document.getElementById('healthy-habits-title').innerText = content[lang].healthyTitle;
+        document.getElementById('time-management-title').innerText = content[lang].timeTitle;
+        document.getElementById('time-management-desc').innerText = content[lang].timeDesc;
+        document.getElementById('silence-title').innerText = content[lang].silenceTitle;
+        document.getElementById('silence-desc').innerText = content[lang].silenceDesc;
+        document.getElementById('unfollow-title').innerText = content[lang].unfollowTitle;
+        document.getElementById('unfollow-desc').innerText = content[lang].unfollowDesc;
+        document.getElementById('gaze-title').innerText = content[lang].gazeTitle;
+        document.getElementById('gaze-desc').innerText = content[lang].gazeDesc;
+    }
+
+    // 3. Toggle function to sync with storage
+    function toggleLanguage() {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        localStorage.setItem('preferredLang', currentLang); 
+        applyLanguage(currentLang);
+    }
+
+    // 4. Apply the saved language immediately on load
+    window.onload = function() {
+        applyLanguage(currentLang);
+    };
+</script>
+</body>
+</html>

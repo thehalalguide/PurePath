@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haram Foods | PurePath Guide</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', 'Noto Sans Arabic', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .alert-box { border-left: 4px solid #ef4444; background-color: #fef2f2; }
+        .info-box { border-left: 4px solid #3b82f6; background-color: #eff6ff; }
+        .enum-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 10px; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 min-h-screen">
+
+    <nav class="p-5 glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-emerald-800 font-bold">
+                ← <span id="back-btn">Back to Home</span>
+            </a>
+            <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold text-emerald-700">العربية</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-5xl shadow-sm mx-auto mb-4">🥩</div>
+            <h1 id="page-title" class="text-4xl font-black text-slate-900 mb-2">Haram Foods</h1>
+            <p id="page-subtitle" class="text-slate-500 italic">A guide to ingredients, meat, and hidden derivatives.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="alert-box p-6 rounded-2xl bg-white shadow-sm">
+                <h3 class="font-bold text-red-800 mb-2">Pork & Derivatives</h3>
+                <p class="text-xs text-slate-600">Includes lard, pork fat, and any ingredient derived from swine.</p>
+            </div>
+            <div class="alert-box p-6 rounded-2xl bg-white shadow-sm">
+                <h3 class="font-bold text-red-800 mb-2">Improper Slaughter</h3>
+                <p class="text-xs text-slate-600">Meat not slaughtered according to Sharia (Zabiha) or dedicated to other than Allah.</p>
+            </div>
+            <div class="alert-box p-6 rounded-2xl bg-white shadow-sm">
+                <h3 class="font-bold text-red-800 mb-2">Blood & Carnivores</h3>
+                <p class="text-xs text-slate-600">Consuming flowing blood or animals with fangs/talons is prohibited.</p>
+            </div>
+        </div>
+
+        <section class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 mb-8">
+            <h2 class="text-xl font-bold mb-4 text-slate-800 flex items-center gap-2">
+                🔍 <span id="enum-title">The E-Number Watchlist</span>
+            </h2>
+            <p class="text-sm text-slate-500 mb-6 italic" id="enum-sub">Often derived from pork or non-halal animals. Check labels carefully:</p>
+            
+            <div class="enum-grid">
+                <div class="bg-red-50 text-red-700 p-2 text-center rounded-lg font-bold border border-red-100">E120</div>
+                <div class="bg-red-50 text-red-700 p-2 text-center rounded-lg font-bold border border-red-100">E441</div>
+                <div class="bg-red-50 text-red-700 p-2 text-center rounded-lg font-bold border border-red-100">E471</div>
+                <div class="bg-red-50 text-red-700 p-2 text-center rounded-lg font-bold border border-red-100">E542</div>
+                <div class="bg-red-50 text-red-700 p-2 text-center rounded-lg font-bold border border-red-100">E904</div>
+                <div class="bg-red-50 text-red-700 p-2 text-center rounded-lg font-bold border border-red-100">E920</div>
+            </div>
+        </section>
+
+        <section class="info-box p-8 rounded-[2rem] bg-white shadow-sm border border-slate-100">
+            <h2 class="text-xl font-bold mb-4 text-blue-800">Gelatin Safety</h2>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                Gelatin is found in candies, marshmallows, and yogurts. Look for <strong>"Halal Certified"</strong> or <strong>"Bovine Gelatin"</strong> (only if Zabiha). 
+            </p>
+            <div class="flex gap-4">
+                <span class="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold">Try: Pectin</span>
+                <span class="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold">Try: Agar Agar</span>
+            </div>
+        </section>
+    </main>
+
+  <script>
+    const content = {
+        en: {
+            back: "Back to Home",
+            title: "Haram Foods",
+            subtitle: "A guide to ingredients, meat, and hidden derivatives.",
+            alert1Title: "Pork & Derivatives",
+            alert1Desc: "Includes lard, pork fat, and any ingredient derived from swine.",
+            alert2Title: "Improper Slaughter",
+            alert2Desc: "Meat not slaughtered according to Sharia (Zabiha) or dedicated to other than Allah.",
+            alert3Title: "Blood & Carnivores",
+            alert3Desc: "Consuming flowing blood or animals with fangs/talons is prohibited.",
+            enumTitle: "The E-Number Watchlist",
+            enumSub: "Often derived from pork or non-halal animals. Check labels carefully:",
+            gelatinTitle: "Gelatin Safety",
+            gelatinDesc: "Gelatin is found in candies, marshmallows, and yogurts. Look for 'Halal Certified' or 'Bovine Gelatin' (only if Zabiha).",
+            tryPectin: "Try: Pectin",
+            tryAgar: "Try: Agar Agar"
+        },
+        ar: {
+            back: "العودة للرئيسية",
+            title: "الأطعمة المحرمة",
+            subtitle: "دليل المكونات واللحوم والمشتقات الخفية.",
+            alert1Title: "الخنزير ومشتقاته",
+            alert1Desc: "يشمل ذلك الشحم ودهن الخنزير وأي مكون مشتق من الخنازير.",
+            alert2Title: "الذبح غير الشرعي",
+            alert2Desc: "اللحوم التي لم تذبح حسب الشريعة (ذبيحة) أو ما ذُبح لغير الله.",
+            alert3Title: "الدم والحيوانات المفترسة",
+            alert3Desc: "يُحرم استهلاك الدم المسفوح أو الحيوانات التي لها أنياب أو مخالب.",
+            enumTitle: "قائمة مراقبة الأرقام الأوروبية (E)",
+            enumSub: "غالبًا ما تشتق من الخنزير أو حيوانات غير حلال. افحص الملصقات بعناية:",
+            gelatinTitle: "سلامة الجيلاتين",
+            gelatinDesc: "يوجد الجيلاتين في الحلويات والمارشميلو والزبادي. ابحث عن 'حلال معتمد' أو 'جيلاتين بقري' (بشرط الذبح الحلال).",
+            tryPectin: "جرب: البكتين",
+            tryAgar: "جرب: أجار أجار"
+        }
+    };
+
+    let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+    function applyLanguage(lang) {
+        const html = document.getElementById('main-html');
+        const btn = document.getElementById('lang-btn');
+        
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        btn.innerText = (lang === 'ar') ? 'English' : 'العربية';
+
+        // Static IDs
+        document.getElementById('back-btn').innerText = content[lang].back;
+        document.getElementById('page-title').innerText = content[lang].title;
+        document.getElementById('page-subtitle').innerText = content[lang].subtitle;
+        document.getElementById('enum-title').innerText = content[lang].enumTitle;
+        document.getElementById('enum-sub').innerText = content[lang].enumSub;
+
+        // Alert Boxes (Meat types)
+        const alerts = document.querySelectorAll('.alert-box');
+        alerts[0].querySelector('h3').innerText = content[lang].alert1Title;
+        alerts[0].querySelector('p').innerText = content[lang].alert1Desc;
+        alerts[1].querySelector('h3').innerText = content[lang].alert2Title;
+        alerts[1].querySelector('p').innerText = content[lang].alert2Desc;
+        alerts[2].querySelector('h3').innerText = content[lang].alert3Title;
+        alerts[2].querySelector('p').innerText = content[lang].alert3Desc;
+
+        // Gelatin Section
+        const infoBox = document.querySelector('.info-box');
+        infoBox.querySelector('h2').innerText = content[lang].gelatinTitle;
+        infoBox.querySelector('p').innerHTML = content[lang].gelatinDesc; // using innerHTML for bold tag support
+
+        // Try bubbles
+        const tryBubbles = infoBox.querySelectorAll('span');
+        tryBubbles[0].innerText = content[lang].tryPectin;
+        tryBubbles[1].innerText = content[lang].tryAgar;
+    }
+
+    function toggleLanguage() {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        localStorage.setItem('preferredLang', currentLang); 
+        applyLanguage(currentLang);
+    }
+
+    window.onload = function() {
+        applyLanguage(currentLang);
+    };
+</script>
+</body>
+</html>

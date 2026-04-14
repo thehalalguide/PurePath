@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationships | PurePath Guide</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', 'Noto Sans Arabic', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .boundary-box { border-left: 4px solid #0ea5e9; background-color: #f0f9ff; }
+        .heart-box { border-left: 4px solid #ec4899; background-color: #fdf2f8; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 min-h-screen">
+
+    <nav class="p-5 glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-emerald-800 font-bold">
+                ← <span id="back-btn">Back to Home</span>
+            </a>
+            <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold text-emerald-700">العربية</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-5xl shadow-sm mx-auto mb-4">💍</div>
+            <h1 id="page-title" class="text-4xl font-black text-slate-900 mb-2">Relationships</h1>
+            <p id="page-subtitle" class="text-slate-500 italic">Building connections based on respect, modesty, and sincerity.</p>
+        </div>
+
+        <section class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 mb-8">
+            <h2 id="social-title" class="text-xl font-bold mb-6 text-slate-800">Digital Boundaries</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="boundary-box p-5 rounded-2xl">
+                    <h3 id="dm-title" class="font-bold text-sky-900">Direct Messaging</h3>
+                    <p id="dm-desc" class="text-sm text-sky-800 mt-1">Keep interactions purposeful and avoid private, unnecessary conversations that lead to doubt.</p>
+                </div>
+
+                <div class="boundary-box p-5 rounded-2xl">
+                    <h3 id="modesty-title" class="font-bold text-sky-900">Privacy & Haya</h3>
+                    <p id="modesty-desc" class="text-sm text-sky-800 mt-1">Protecting your private life and maintaining modesty in what you share publicly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="heart-box p-8 rounded-[2rem] bg-white shadow-sm border border-slate-100">
+            <h2 id="healthy-title" class="text-xl font-bold mb-6 text-pink-800">Noble Intentions</h2>
+            
+            <div class="space-y-6">
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🤝</div>
+                    <div>
+                        <h4 id="family-title" class="font-bold text-slate-800">Upholding Family Ties</h4>
+                        <p id="family-desc" class="text-sm text-slate-500">Prioritizing kindness and patience with parents and siblings (Silat al-Rahim).</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🛡️</div>
+                    <div>
+                        <h4 id="company-title" class="font-bold text-slate-800">Good Company</h4>
+                        <p id="company-desc" class="text-sm text-slate-500">Choosing friends who inspire you to grow and remind you of your higher purpose.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+ <script>
+    const content = {
+        en: {
+            back: "Back to Home",
+            title: "Relationships",
+            subtitle: "Building connections based on respect, modesty, and sincerity.",
+            socialTitle: "Digital Boundaries",
+            dmTitle: "Direct Messaging",
+            dmDesc: "Keep interactions purposeful and avoid private, unnecessary conversations that lead to doubt.",
+            modestyTitle: "Privacy & Haya",
+            modestyDesc: "Protecting your private life and maintaining modesty in what you share publicly.",
+            healthyTitle: "Noble Intentions",
+            familyTitle: "Upholding Family Ties",
+            familyDesc: "Prioritizing kindness and patience with parents and siblings (Silat al-Rahim).",
+            companyTitle: "Good Company",
+            companyDesc: "Choosing friends who inspire you to grow and remind you of your higher purpose."
+        },
+        ar: {
+            back: "العودة للرئيسية",
+            title: "العلاقات",
+            subtitle: "بناء روابط تقوم على الاحترام، الحياء، والإخلاص.",
+            socialTitle: "الحدود الرقمية",
+            dmTitle: "المراسلة المباشرة",
+            dmDesc: "الحفاظ على هدفية التفاعل وتجنب المحادثات الخاصة غير الضرورية التي تؤدي إلى الشبهات.",
+            modestyTitle: "الخصوصية والحياء",
+            modestyDesc: "حماية حياتك الخاصة والحفاظ على الحياء فيما تنشره علنًا.",
+            healthyTitle: "النوايا النبيلة",
+            familyTitle: "صلة الرحم",
+            familyDesc: "إعطاء الأولوية للطف والصبر مع الوالدين والإخوة.",
+            companyTitle: "الصحبة الصالحة",
+            companyDesc: "اختيار الأصدقاء الذين يلهمونك للنمو ويذكرونك بغايتك الأسمى."
+        }
+    };
+
+    // 1. Initialize currentLang from storage or default to English
+    let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+    // 2. Create the unified apply function
+    function applyLanguage(lang) {
+        const html = document.getElementById('main-html');
+        const btn = document.getElementById('lang-btn');
+        
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        btn.innerText = (lang === 'ar') ? 'English' : 'العربية';
+
+        // Update Title and Subtitle
+        document.getElementById('back-btn').innerText = content[lang].back;
+        document.getElementById('page-title').innerText = content[lang].title;
+        document.getElementById('page-subtitle').innerText = content[lang].subtitle;
+
+        // Update Boundaries Section
+        document.getElementById('social-title').innerText = content[lang].socialTitle;
+        document.getElementById('dm-title').innerText = content[lang].dmTitle;
+        document.getElementById('dm-desc').innerText = content[lang].dmDesc;
+        document.getElementById('modesty-title').innerText = content[lang].modestyTitle;
+        document.getElementById('modesty-desc').innerText = content[lang].modestyDesc;
+
+        // Update Intentions Section
+        document.getElementById('healthy-title').innerText = content[lang].healthyTitle;
+        document.getElementById('family-title').innerText = content[lang].familyTitle;
+        document.getElementById('family-desc').innerText = content[lang].familyDesc;
+        document.getElementById('company-title').innerText = content[lang].companyTitle;
+        document.getElementById('company-desc').innerText = content[lang].companyDesc;
+    }
+
+    // 3. Toggle function to sync with storage
+    function toggleLanguage() {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        localStorage.setItem('preferredLang', currentLang); 
+        applyLanguage(currentLang);
+    }
+
+    // 4. Apply the saved language immediately on load
+    window.onload = function() {
+        applyLanguage(currentLang);
+    };
+</script>
+</body>
+</html>

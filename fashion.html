@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modest Fashion | PurePath Guide</title>
+   <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', 'Noto Sans Arabic', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .style-alert { border-left: 4px solid #14b8a6; background-color: #f0fdfa; }
+        .ethics-box { border-left: 4px solid #6366f1; background-color: #eef2ff; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 min-h-screen">
+
+    <nav class="p-5 glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-emerald-800 font-bold">
+                ← <span id="back-btn">Back to Home</span>
+            </a>
+            <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold text-emerald-700">العربية</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-5xl shadow-sm mx-auto mb-4">👕</div>
+            <h1 id="page-title" class="text-4xl font-black text-slate-900 mb-2">Modest Fashion</h1>
+            <p id="page-subtitle" class="text-slate-500 italic">Exploring the ethics of clothing and the beauty of modesty.</p>
+        </div>
+
+        <section class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 mb-8">
+            <h2 id="principles-title" class="text-xl font-bold mb-6 text-slate-800">The Essence of Haya</h2>
+            
+            <div class="space-y-4">
+                <div class="style-alert p-5 rounded-2xl">
+                    <h3 id="modesty-standard-title" class="font-bold text-teal-900">Universal Standards</h3>
+                    <p id="modesty-standard-desc" class="text-sm text-teal-800 mt-1">Clothing that is loose, non-transparent, and covers the required areas (Awrah) for both men and women.</p>
+                </div>
+
+                <div class="style-alert p-5 rounded-2xl">
+                    <h3 id="intent-title" class="font-bold text-teal-900">Intentional Style</h3>
+                    <p id="intent-desc" class="text-sm text-teal-800 mt-1">Avoiding clothing designed specifically for vanity, arrogance, or to imitate harmful cultural trends.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="ethics-box p-8 rounded-[2rem] bg-white shadow-sm border border-slate-100">
+            <h2 id="ethics-title" class="text-xl font-bold mb-6 text-indigo-800">Ethical Sourcing</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🧵</div>
+                    <div>
+                        <h4 id="fair-trade-title" class="font-bold text-slate-800">Fair Trade</h4>
+                        <p id="fair-trade-desc" class="text-xs text-slate-500 italic">Supporting brands that ensure fair wages and safe conditions for workers.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">♻️</div>
+                    <div>
+                        <h4 id="sustainable-title" class="font-bold text-slate-800">Sustainability</h4>
+                        <p id="sustainable-desc" class="text-xs text-slate-500 italic">Choosing quality over quantity to reduce "Fast Fashion" waste.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🐑</div>
+                    <div>
+                        <h4 id="halal-materials-title" class="font-bold text-slate-800">Pure Materials</h4>
+                        <p id="halal-materials-desc" class="text-xs text-slate-500 italic">Being mindful of animal-derived products like certain silks or furs.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="text-2xl">🤲</div>
+                    <div>
+                        <h4 id="charity-title" class="font-bold text-slate-800">Mindful Disposal</h4>
+                        <p id="charity-desc" class="text-xs text-slate-500 italic">Donating or recycling old clothing instead of discarding it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+ <script>
+    const content = {
+        en: {
+            back: "Back to Home",
+            title: "Modest Fashion",
+            subtitle: "Exploring the ethics of clothing and the beauty of modesty.",
+            principlesTitle: "The Essence of Haya",
+            standardTitle: "Universal Standards",
+            standardDesc: "Clothing that is loose, non-transparent, and covers the required areas (Awrah) for both men and women.",
+            intentTitle: "Intentional Style",
+            intentDesc: "Avoiding clothing designed specifically for vanity, arrogance, or to imitate harmful cultural trends.",
+            ethicsTitle: "Ethical Sourcing",
+            fairTitle: "Fair Trade",
+            fairDesc: "Supporting brands that ensure fair wages and safe conditions for workers.",
+            susTitle: "Sustainability",
+            susDesc: "Choosing quality over quantity to reduce 'Fast Fashion' waste.",
+            materialsTitle: "Pure Materials",
+            materialsDesc: "Being mindful of animal-derived products like certain silks or furs.",
+            charityTitle: "Mindful Disposal",
+            charityDesc: "Donating or recycling old clothing instead of discarding it."
+        },
+        ar: {
+            back: "العودة للرئيسية",
+            title: "الأزياء المحتشمة",
+            subtitle: "استكشاف أخلاقيات الملابس وجمال الحياء.",
+            principlesTitle: "جوهر الحياء",
+            standardTitle: "المعايير العالمية",
+            standardDesc: "ملابس فضفاضة، غير شفافة، وتغطي العورات لكل من الرجال والنساء.",
+            intentTitle: "الأناقة الهادفة",
+            intentDesc: "تجنب الملابس المصممة خصيصًا للتكبر أو الغرور أو تقليد الصيحات الثقافية الضارة.",
+            ethicsTitle: "المصادر الأخلاقية",
+            fairTitle: "التجارة العادلة",
+            fairDesc: "دعم العلامات التجارية التي تضمن أجورًا عادلة وظروفًا آمنة للعمال.",
+            susTitle: "الاستدامة",
+            susDesc: "اختيار الجودة على الكمية لتقليل نفايات 'الموضة السريعة'.",
+            materialsTitle: "مواد نقية",
+            materialsDesc: "الانتباه للمنتجات المشتقة من الحيوانات مثل بعض أنواع الحرير أو الفراء.",
+            charityTitle: "التخلص الواعي",
+            charityDesc: "التبرع بالملابس القديمة أو إعادة تدويرها بدلاً من رميها.",
+        }
+    };
+
+    // 1. Initialize currentLang from storage or default to English
+    let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+    // 2. The unified apply function
+    function applyLanguage(lang) {
+        const html = document.getElementById('main-html');
+        const btn = document.getElementById('lang-btn');
+        
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        btn.innerText = (lang === 'ar') ? 'English' : 'العربية';
+
+        // Update Text Elements
+        document.getElementById('back-btn').innerText = content[lang].back;
+        document.getElementById('page-title').innerText = content[lang].title;
+        document.getElementById('page-subtitle').innerText = content[lang].subtitle;
+        document.getElementById('principles-title').innerText = content[lang].principlesTitle;
+        document.getElementById('modesty-standard-title').innerText = content[lang].standardTitle;
+        document.getElementById('modesty-standard-desc').innerText = content[lang].standardDesc;
+        document.getElementById('intent-title').innerText = content[lang].intentTitle;
+        document.getElementById('intent-desc').innerText = content[lang].intentDesc;
+        document.getElementById('ethics-title').innerText = content[lang].ethicsTitle;
+        document.getElementById('fair-trade-title').innerText = content[lang].fairTitle;
+        document.getElementById('fair-trade-desc').innerText = content[lang].fairDesc;
+        document.getElementById('sustainable-title').innerText = content[lang].susTitle;
+        document.getElementById('sustainable-desc').innerText = content[lang].susDesc;
+        document.getElementById('halal-materials-title').innerText = content[lang].materialsTitle;
+        document.getElementById('halal-materials-desc').innerText = content[lang].materialsDesc;
+        document.getElementById('charity-title').innerText = content[lang].charityTitle;
+        document.getElementById('charity-desc').innerText = content[lang].charityDesc;
+    }
+
+    // 3. Updated toggle function to sync with storage
+    function toggleLanguage() {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        localStorage.setItem('preferredLang', currentLang); 
+        applyLanguage(currentLang);
+    }
+
+    // 4. Apply the saved language immediately on load
+    window.onload = function() {
+        applyLanguage(currentLang);
+    };
+</script>
+</body>
+</html>

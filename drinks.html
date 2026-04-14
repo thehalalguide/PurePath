@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haram Drinks | PurePath Guide</title>
+   <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', 'Noto Sans Arabic', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .alert-box { border-left: 4px solid #ef4444; background-color: #fef2f2; }
+        .halal-box { border-left: 4px solid #10b981; background-color: #ecfdf5; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 min-h-screen">
+
+    <nav class="p-5 glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-emerald-800 font-bold">
+                ← <span id="back-btn">Back to Home</span>
+            </a>
+            <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold text-emerald-700">العربية</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-5xl shadow-sm mx-auto mb-4">🍷</div>
+            <h1 id="page-title" class="text-4xl font-black text-slate-900 mb-2">Haram Drinks</h1>
+            <p id="page-subtitle" class="text-slate-500 italic">Understanding the prohibitions and finding pure alternatives.</p>
+        </div>
+
+        <section class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 mb-8">
+            <h2 id="danger-title" class="text-xl font-bold mb-6 flex items-center gap-2 text-red-600">
+                ⚠️ <span id="danger-text">Common Prohibitions</span>
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="alert-box p-4 rounded-xl">
+                    <h3 class="font-bold text-red-800" id="item1-title">Alcoholic Beverages</h3>
+                    <p class="text-sm text-slate-600 mt-1" id="item1-desc">Khamr (Intoxicants) are strictly forbidden in any quantity, including wine, beer, and spirits.</p>
+                </div>
+
+                <div class="alert-box p-4 rounded-xl">
+                    <h3 class="font-bold text-red-800" id="item2-title">Hidden Ethanol</h3>
+                    <p class="text-sm text-slate-600 mt-1" id="item2-desc">Certain soft drinks or flavorings may use alcohol as a solvent. Always check for "Non-Alcoholic" certification.</p>
+                </div>
+
+                <div class="alert-box p-4 rounded-xl">
+                    <h3 class="font-bold text-red-800" id="item3-title">Cross-Contamination</h3>
+                    <p class="text-sm text-slate-600 mt-1" id="item3-desc">Drinks prepared in the same shakers or glasses used for alcohol without proper cleaning (Istihala context).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100">
+            <h2 id="halal-title" class="text-xl font-bold mb-6 flex items-center gap-2 text-emerald-600">
+                ✨ <span id="halal-text">Pure Alternatives</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+               <div class="halal-box p-4 rounded-xl">
+    <span class="font-bold text-emerald-800">Mocktails</span>
+    <p class="text-xs text-slate-500">Fruit-based botanical infusions.</p>
+</div>
+                <div class="halal-box p-4 rounded-xl">
+                    <span class="font-bold text-emerald-800">Natural Juices</span>
+                    <p class="text-xs text-slate-500">100% pure squeezed fruits.</p>
+                </div>
+                <div class="halal-box p-4 rounded-xl">
+                    <span class="font-bold text-emerald-800">Sparkling Water</span>
+                    <p class="text-xs text-slate-500">With natural mint or lemon.</p>
+                </div>
+                <div class="halal-box p-4 rounded-xl">
+                    <span class="font-bold text-emerald-800">Traditional Teas</span>
+                    <p class="text-xs text-slate-500">Herbal, Green, or Black teas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+  <script>
+    const content = {
+        en: {
+            back: "Back to Home",
+            title: "Haram Drinks",
+            subtitle: "Understanding the prohibitions and finding pure alternatives.",
+            dangerText: "Common Prohibitions",
+            item1Title: "Alcoholic Beverages",
+            item1Desc: "Khamr (Intoxicants) are strictly forbidden in any quantity, including wine, beer, and spirits.",
+            item2Title: "Hidden Ethanol",
+            item2Desc: "Certain soft drinks or flavorings may use alcohol as a solvent. Always check for 'Non-Alcoholic' certification.",
+            item3Title: "Cross-Contamination",
+            item3Desc: "Drinks prepared in the same shakers or glasses used for alcohol without proper cleaning (Istihala context).",
+            halalText: "Pure Alternatives",
+            alt1Head: "Mocktails",
+            alt1Desc: "Fruit-based botanical infusions.",
+            alt2Head: "Natural Juices",
+            alt2Desc: "100% pure squeezed fruits.",
+            alt3Head: "Sparkling Water",
+            alt3Desc: "With natural mint or lemon.",
+            alt4Head: "Traditional Teas",
+            alt4Desc: "Herbal, Green, or Black teas."
+        },
+        ar: {
+            back: "العودة للرئيسية",
+            title: "المشروبات المحرمة",
+            subtitle: "فهم المحرمات وإيجاد بدائل نقية.",
+            dangerText: "المحرمات الشائعة",
+            item1Title: "المشروبات الكحولية",
+            item1Desc: "الخمر (المسكرات) محرمة قطعيًا بأي كمية، بما في ذلك النبيذ والبيرة والمشروبات الروحية.",
+            item2Title: "الإيثانول الخفي",
+            item2Desc: "قد تستخدم بعض المشروبات الغازية أو المنكهات الكحول كمذيب. تأكد دائمًا من شهادة 'خالٍ من الكحول'.",
+            item3Title: "التلوث الخلطي",
+            item3Desc: "المشروبات المحضرة في نفس الأواني المستخدمة للكحول دون تنظيف شرعي صحيح.",
+            halalText: "بدائل نقية",
+            alt1Head: "موكتيل",
+            alt1Desc: "مشروبات نباتية تعتمد على الفاكهة.",
+            alt2Head: "عصائر طبيعية",
+            alt2Desc: "عصائر فواكه طبيعية 100%.",
+            alt3Head: "مياه فوارة",
+            alt3Desc: "مع النعناع الطبيعي أو الليمون.",
+            alt4Head: "الشاي التقليدي",
+            alt4Desc: "شاي الأعشاب، الشاي الأخضر أو الأسود."
+        }
+    };
+
+    // Initialize currentLang from storage or default to English
+    let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+    function applyLanguage(lang) {
+        const html = document.getElementById('main-html');
+        const btn = document.getElementById('lang-btn');
+        
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        btn.innerText = (lang === 'ar') ? 'English' : 'العربية';
+
+        // Update Text Elements
+        document.getElementById('back-btn').innerText = content[lang].back;
+        document.getElementById('page-title').innerText = content[lang].title;
+        document.getElementById('page-subtitle').innerText = content[lang].subtitle;
+        document.getElementById('danger-text').innerText = content[lang].dangerText;
+        
+        // Items
+        document.getElementById('item1-title').innerText = content[lang].item1Title;
+        document.getElementById('item1-desc').innerText = content[lang].item1Desc;
+        document.getElementById('item2-title').innerText = content[lang].item2Title;
+        document.getElementById('item2-desc').innerText = content[lang].item2Desc;
+        document.getElementById('item3-title').innerText = content[lang].item3Title;
+        document.getElementById('item3-desc').innerText = content[lang].item3Desc;
+
+        // Alternatives
+        document.getElementById('halal-text').innerText = content[lang].halalText;
+        
+        // We need to target the span/p inside the halal-boxes
+        const halalBoxes = document.querySelectorAll('.halal-box');
+        
+        // Box 1
+        halalBoxes[0].querySelector('span').innerText = content[lang].alt1Head;
+        halalBoxes[0].querySelector('p').innerText = content[lang].alt1Desc;
+        // Box 2
+        halalBoxes[1].querySelector('span').innerText = content[lang].alt2Head;
+        halalBoxes[1].querySelector('p').innerText = content[lang].alt2Desc;
+        // Box 3
+        halalBoxes[2].querySelector('span').innerText = content[lang].alt3Head;
+        halalBoxes[2].querySelector('p').innerText = content[lang].alt3Desc;
+        // Box 4
+        halalBoxes[3].querySelector('span').innerText = content[lang].alt4Head;
+        halalBoxes[3].querySelector('p').innerText = content[lang].alt4Desc;
+    }
+
+    function toggleLanguage() {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        localStorage.setItem('preferredLang', currentLang); 
+        applyLanguage(currentLang);
+    }
+
+    window.onload = function() {
+        applyLanguage(currentLang);
+    };
+</script>
+</body>
+</html>

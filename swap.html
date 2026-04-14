@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Halal Swap | PurePath Guide</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', 'Noto Sans Arabic', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .swap-card { transition: all 0.3s ease; }
+        .swap-card:hover { transform: translateY(-5px); }
+        .old-way { border-left: 4px solid #f87171; background-color: #fef2f2; }
+        .new-way { border-left: 4px solid #34d399; background-color: #ecfdf5; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 min-h-screen">
+
+    <nav class="p-5 glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-emerald-800 font-bold">
+                ← <span id="back-btn">Back to Home</span>
+            </a>
+            <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold text-emerald-700">العربية</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-5xl shadow-sm mx-auto mb-4">✨</div>
+            <h1 id="page-title" class="text-4xl font-black text-slate-900 mb-2">The Halal Swap</h1>
+            <p id="page-subtitle" class="text-slate-500 italic">Elevating your lifestyle through better choices and pure alternatives.</p>
+        </div>
+
+        <div class="space-y-8">
+            <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 swap-card">
+                <h2 id="bev-swap-title" class="text-xl font-bold mb-6 text-slate-800">Beverages</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="old-way p-4 rounded-xl">
+                        <span class="text-xs font-bold text-red-600 uppercase">Old Habit</span>
+                        <p id="bev-old" class="font-semibold text-slate-700">Alcoholic Drinks</p>
+                    </div>
+                    <div class="new-way p-4 rounded-xl">
+                        <span class="text-xs font-bold text-emerald-600 uppercase">Halal Swap</span>
+                        <p id="bev-new" class="font-semibold text-slate-700">Artisanal Mocktails & Fresh Juices</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 swap-card">
+                <h2 id="fin-swap-title" class="text-xl font-bold mb-6 text-slate-800">Finance</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="old-way p-4 rounded-xl">
+                        <span class="text-xs font-bold text-red-600 uppercase">Old Habit</span>
+                        <p id="fin-old" class="font-semibold text-slate-700">Interest-Based Savings</p>
+                    </div>
+                    <div class="new-way p-4 rounded-xl">
+                        <span class="text-xs font-bold text-emerald-600 uppercase">Halal Swap</span>
+                        <p id="fin-new" class="font-semibold text-slate-700">Sharia-Compliant Investments</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 swap-card">
+                <h2 id="ent-swap-title" class="text-xl font-bold mb-6 text-slate-800">Entertainment</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="old-way p-4 rounded-xl">
+                        <span class="text-xs font-bold text-red-600 uppercase">Old Habit</span>
+                        <p id="ent-old" class="font-semibold text-slate-700">Toxic Lyrics & Content</p>
+                    </div>
+                    <div class="new-way p-4 rounded-xl">
+                        <span class="text-xs font-bold text-emerald-600 uppercase">Halal Swap</span>
+                        <p id="ent-new" class="font-semibold text-slate-700">Educational Podcasts & Nature Sounds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   <script>
+    const content = {
+        en: {
+            back: "Back to Home",
+            title: "The Halal Swap",
+            subtitle: "Elevating your lifestyle through better choices and pure alternatives.",
+            oldLabel: "Old Habit",
+            newLabel: "Halal Swap",
+            bevTitle: "Beverages",
+            bevOld: "Alcoholic Drinks",
+            bevNew: "Artisanal Mocktails & Fresh Juices",
+            finTitle: "Finance",
+            finOld: "Interest-Based Savings",
+            finNew: "Sharia-Compliant Investments",
+            entTitle: "Entertainment",
+            entOld: "Toxic Lyrics & Content",
+            entNew: "Educational Podcasts & Nature Sounds"
+        },
+        ar: {
+            back: "العودة للرئيسية",
+            title: "البديل الحلال",
+            subtitle: "ارتقِ بأسلوب حياتك من خلال خيارات أفضل وبدائل نقية.",
+            oldLabel: "عادة قديمة",
+            newLabel: "بديل حلال",
+            bevTitle: "المشروبات",
+            bevOld: "المشروبات الكحولية",
+            bevNew: "الموكتيلات المبتكرة والعصائر الطازجة",
+            finTitle: "المالية",
+            finOld: "الادخار القائم على الربا",
+            finNew: "الاستثمارات المتوافقة مع الشريعة",
+            entTitle: "الترفيه",
+            entOld: "المحتوى والكلمات السامة",
+            entNew: "البودكاست التعليمي وأصوات الطبيعة"
+        }
+    };
+
+    let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+    function applyLanguage(lang) {
+        const html = document.getElementById('main-html');
+        const btn = document.getElementById('lang-btn');
+        
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        btn.innerText = (lang === 'ar') ? 'English' : 'العربية';
+
+        // Update Header
+        document.getElementById('back-btn').innerText = content[lang].back;
+        document.getElementById('page-title').innerText = content[lang].title;
+        document.getElementById('page-subtitle').innerText = content[lang].subtitle;
+
+        // Update Section Titles
+        document.getElementById('bev-swap-title').innerText = content[lang].bevTitle;
+        document.getElementById('fin-swap-title').innerText = content[lang].finTitle;
+        document.getElementById('ent-swap-title').innerText = content[lang].entTitle;
+
+        // Update Content
+        document.getElementById('bev-old').innerText = content[lang].bevOld;
+        document.getElementById('bev-new').innerText = content[lang].bevNew;
+        document.getElementById('fin-old').innerText = content[lang].finOld;
+        document.getElementById('fin-new').innerText = content[lang].finNew;
+        document.getElementById('ent-old').innerText = content[lang].entOld;
+        document.getElementById('ent-new').innerText = content[lang].entNew;
+
+        // Update Red/Green Labels
+        const oldLabels = document.querySelectorAll('.old-way span');
+        const newLabels = document.querySelectorAll('.new-way span');
+        
+        oldLabels.forEach(label => label.innerText = content[lang].oldLabel);
+        newLabels.forEach(label => label.innerText = content[lang].newLabel);
+    }
+
+    function toggleLanguage() {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        localStorage.setItem('preferredLang', currentLang); 
+        applyLanguage(currentLang);
+    }
+
+    window.onload = function() {
+        applyLanguage(currentLang);
+    };
+</script>
+</body>
+</html>
