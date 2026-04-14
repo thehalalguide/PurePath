@@ -32,22 +32,22 @@
         </div>
 
         <form name="suggestions" method="POST" data-netlify="true" class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 space-y-6">
-    <div>
-        <label id="name-label" class="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
-        <input type="text" id="name-input" name="full-name" required class="w-full p-4 rounded-xl input-field bg-slate-50">
-    </div>
-    <div>
-        <label id="email-label" class="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
-        <input type="email" id="email-input" name="email" required class="w-full p-4 rounded-xl input-field bg-slate-50">
-    </div>
-    <div>
-        <label id="msg-label" class="block text-sm font-bold text-slate-700 mb-2">Message</label>
-        <textarea id="msg-input" name="message" rows="4" required class="w-full p-4 rounded-xl input-field bg-slate-50"></textarea>
-    </div>
-    <button id="submit-btn" type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl transition-colors shadow-lg shadow-emerald-100">
-        Send Message
-    </button>
-</form>
+            <div>
+                <label id="name-label" class="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
+                <input type="text" id="name-input" name="full-name" required class="w-full p-4 rounded-xl input-field bg-slate-50">
+            </div>
+            <div>
+                <label id="email-label" class="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
+                <input type="email" id="email-input" name="email" required class="w-full p-4 rounded-xl input-field bg-slate-50">
+            </div>
+            <div>
+                <label id="msg-label" class="block text-sm font-bold text-slate-700 mb-2">Message</label>
+                <textarea id="msg-input" name="message" rows="4" required class="w-full p-4 rounded-xl input-field bg-slate-50"></textarea>
+            </div>
+            <button id="submit-btn" type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl transition-colors shadow-lg shadow-emerald-100">
+                Send Message
+            </button>
+        </form>
     </main>
 
  <script>
@@ -95,10 +95,10 @@
         document.getElementById('msg-label').innerText = content[lang].msgLabel;
         document.getElementById('submit-btn').innerText = content[lang].submit;
 
-        const inputs = document.querySelectorAll('input, textarea');
-        inputs[0].placeholder = content[lang].namePlace;
-        inputs[1].placeholder = content[lang].emailPlace;
-        inputs[2].placeholder = content[lang].msgPlace;
+        // FIXED: Using IDs ensures the placeholders go to the correct boxes
+        document.getElementById('name-input').placeholder = content[lang].namePlace;
+        document.getElementById('email-input').placeholder = content[lang].emailPlace;
+        document.getElementById('msg-input').placeholder = content[lang].msgPlace;
     }
 
     function toggleLanguage() {
