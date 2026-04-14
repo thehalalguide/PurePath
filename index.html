@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>PurePath | Global Halal Guide</title>
+    <title>PurePath | Global Halal Guide</title>
 <meta name="description" content="A modern, global guide for Muslims to navigate E-numbers, finance, and lifestyle choices.">
 
 <meta property="og:title" content="PurePath | The Global Halal Guide">
@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://purepath-halalguide.netlify.app/">
 <meta property="og:type" content="website">
 
-<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="icon" type="image/png" href="images/logo.jpg">
    <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -21,24 +21,29 @@
         .card-anim { transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; }
         .card-anim:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         input::placeholder { color: #94a3b8; opacity: 1; }
-        [dir="rtl"] .source-card, 
-        [dir="rtl"] .prep-box, 
-        [dir="rtl"] .finance-alert, 
-        [dir="rtl"] .growth-box,
-        [dir="rtl"] .travel-box {
-            border-left-width: 0;
-            border-right-width: 4px;
-        }
-        [dir="rtl"] #section-title {
-            border-left-width: 0;
-            border-right-width: 4px;
-            padding-left: 0;
-            padding-right: 1rem;
-        }
-        [dir="rtl"] .old-way, [dir="rtl"] .new-way {
-            border-left-width: 0;
-            border-right-width: 4px;
-        }
+        /* Generic fix for any element with a left border */
+[dir="rtl"] .source-card, 
+[dir="rtl"] .prep-box, 
+[dir="rtl"] .finance-alert, 
+[dir="rtl"] .growth-box,
+[dir="rtl"] .travel-box {
+    border-left-width: 0;
+    border-right-width: 4px;
+}
+
+/* Specific fix for the "Essential Guides" section title (Image 2) */
+[dir="rtl"] #section-title {
+    border-left-width: 0;
+    border-right-width: 4px;
+    padding-left: 0;
+    padding-right: 1rem; /* Adjust padding to the right side */
+}
+
+/* Fix for the card inner borders (Image 1) */
+[dir="rtl"] .old-way, [dir="rtl"] .new-way {
+    border-left-width: 0;
+    border-right-width: 4px;
+}
     </style>
 </head>
 <body class="bg-[#f8fafc] text-slate-900 min-h-screen">
@@ -82,21 +87,6 @@
     <main class="max-w-6xl mx-auto px-6 pb-20">
         <h2 id="section-title" class="text-2xl font-bold text-slate-800 mb-8 border-l-4 border-emerald-500 pl-4">Essential Guides</h2>
         <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-        
-        <section class="mt-20 glass p-8 rounded-[2rem] border border-emerald-100 max-w-2xl mx-auto">
-            <h2 id="form-title" class="text-2xl font-bold text-emerald-800 mb-2">Grow the Ummah</h2>
-            <p id="form-sub" class="text-slate-500 mb-6">Have an idea or a product we missed? Send it to our team.</p>
-            
-            <form name="suggestions" method="POST" data-netlify="true" action="/">
-                <div class="grid grid-cols-1 gap-4">
-                    <input type="text" name="name" placeholder="Your Name" class="p-4 rounded-xl border border-slate-200 focus:border-emerald-500 outline-none">
-                    <textarea name="suggestion" required placeholder="What should we add?" rows="4" class="p-4 rounded-xl border border-slate-200 focus:border-emerald-500 outline-none"></textarea>
-                    <button type="submit" class="bg-emerald-600 text-white font-bold py-4 rounded-xl hover:bg-emerald-700 transition shadow-lg">
-                        Submit Suggestion
-                    </button>
-                </div>
-            </form>
-        </section>
     </main>
 
     <footer class="bg-emerald-900 text-white py-12 px-6 text-center">
@@ -116,8 +106,6 @@
             heroSub: "Your companion for navigating modern choices with faith and clarity.",
             searchPlaceholder: "Search 'E-numbers', 'Music', or 'Loans'...",
             sectionTitle: "Essential Guides",
-            formTitle: "Grow the Ummah",
-            formSub: "Have an idea or a product we missed? Send it to our team.",
             footerPrivacy: "Privacy",
             footerSources: "Sources",
             footerContact: "Contact",
@@ -141,8 +129,6 @@
             heroSub: "رفيقك لاتخاذ قراراتك اليومية بوضوح وإيمان.",
             searchPlaceholder: "ابحث عن 'جيلاتين'، 'موسيقى'، أو 'قروض'...",
             sectionTitle: "الأدلة الأساسية",
-            formTitle: "ساهم في تطوير المجتمع",
-            formSub: "هل لديك فكرة أو منتج فاتنا؟ أرسله إلى فريقنا.",
             footerPrivacy: "الخصوصية",
             footerSources: "المصادر",
             footerContact: "اتصل بنا",
@@ -178,13 +164,12 @@
         document.getElementById('hero-sub').innerText = content[lang].heroSub;
         searchInput.placeholder = content[lang].searchPlaceholder;
         document.getElementById('section-title').innerText = content[lang].sectionTitle;
-        document.getElementById('form-title').innerText = content[lang].formTitle;
-        document.getElementById('form-sub').innerText = content[lang].formSub;
 
         footerLinks[0].innerText = content[lang].footerPrivacy;
         footerLinks[1].innerText = content[lang].footerSources;
         footerLinks[2].innerText = content[lang].footerContact;
         
+        // Render cards based on current search value
         renderCards(searchInput.value);
     }
 
@@ -239,6 +224,7 @@
         });
     }
 
+    // Fixed handleSearch to be more responsive
     function handleSearch() {
         const query = document.getElementById('main-search').value;
         renderCards(query);
